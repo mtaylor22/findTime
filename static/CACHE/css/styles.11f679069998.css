@@ -1,0 +1,10 @@
+body {
+  background-color: #112233;
+}
+.rounded {
+  background-color: #6699bb;
+  border-radius: 10px;
+  padding: 5px;
+  width: 100px;
+  height: 100px;
+}
