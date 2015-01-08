@@ -2,7 +2,8 @@
 @lighter: @bg + #379;
 @main-width: 800px;
 @banner-height: 110px;
-
+@nav-height: 30px;
+@login-width: 300px;
 body {
   background-color: @bg;
 }
@@ -13,16 +14,16 @@ body, div, p, h1, h2, h3{
 .banner{
   background-color: @lighter;
   width:100%;
-  height:@banner-height;
+  height:@banner-height + @nav-height;
   position: absolute;
 }
 #banner-text{
   font-family:Georgia;
   text-indent:15px;
   width:100%;
-  height:@banner-height;
+  height:@banner-height + @nav-height;
   background-color: darken(@lighter, 10%);
-  line-height:@banner-height;
+  line-height:@banner-height + @nav-height;
   font-size:72px;
   color: @bg;
   font-weight:bold;
@@ -44,4 +45,66 @@ body, div, p, h1, h2, h3{
   .middle;
   z-index:1;
   height:100%;
+}
+#nav-panel{
+  height:@nav-height;
+  background-color:#123;
+  color:#CDE;
+  width:@main-width - @login-width;
+  line-height:@nav-height;
+  font-weight:bold;
+  text-indent:10px;
+  float:left;
+  a{
+    cursor:pointer;
+    font-size:16px;
+    font-family:arial;
+    &:hover{
+      color:#FFF;
+    }
+  }
+}
+
+#login-panel{
+  background-color:#456;
+  width:@login-width;
+  height:@nav-height;
+  bottom:0;
+  position: absolute;
+  color:#CDE;
+  text-indent: 5px;
+  font-weight:bold;
+  line-height: @nav-height;
+  &:hover{
+    background-color:#345;
+  }
+  cursor:pointer;
+  font-size:16px;
+  font-family:arial;
+  &:hover{
+    color:#FFF;
+  }
+}
+#login-container{
+  height:@nav-height;
+  background-color: #234;
+  &:hover{
+    height:@banner-height + @nav-height;
+  }
+  webkit-transition: height 1s;
+  -moz-transition: height 1s;
+  -ms-transition: height 1s;
+  -o-transition: height 1s;
+  transition: height 1s;
+  left:@main-width - @login-width;
+  width:@login-width;
+  float:left;
+  position:absolute;
+}
+#content-container{
+  border: 1px solid @lighter;
+  margin: 10px;
+  width:@main-width - margin;
+  height:400px;
+  background-color:darken(@bg, 3%);
 }
