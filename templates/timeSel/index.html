@@ -2,16 +2,21 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Title of the document</title>
+		<title>findTime</title>
 		{% load staticfiles %}
 		{% load compress %}
-
-{% compress css %}
-<link type="text/less" rel="stylesheet" href="/static/styles.less" charset="utf-8">
-{% endcompress %}
+        {% compress css %}
+        <link type="text/less" rel="stylesheet" href="/static/styles.less" charset="utf-8">
+        {% endcompress %}
 	</head>
 	<body>
-		<div class="banner"><h1>findTime</h1></div>
-
+        <div id="screen"></div>
+		<div class="banner"></div>
+        <div id="main-container">
+            <div id="banner-text">find<span>Time</span></div>
+            <div id="content-container">
+                
+            </div>
+        </div>
 	</body>
 </html>

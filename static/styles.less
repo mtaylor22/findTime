@@ -1,16 +1,47 @@
 @bg: #123;
 @lighter: @bg + #379;
+@main-width: 800px;
+@banner-height: 110px;
 
 body {
-   background-color: @bg;
+  background-color: @bg;
+}
+body, div, p, h1, h2, h3{
+  margin:0;
+  padding:0;
 }
 .banner{
-	background-color: @lighter;
-	border-radius:15px;
-	padding:5px;
-//	width:100px;
-//	height:100px;
-    font-size:48px;
-    font-family:arial, sans-serif;
-    color: @bg;
+  background-color: @lighter;
+  width:100%;
+  height:@banner-height;
+  position: absolute;
+}
+#banner-text{
+  font-family:Georgia;
+  text-indent:15px;
+  width:100%;
+  height:@banner-height;
+  background-color: darken(@lighter, 10%);
+  line-height:@banner-height;
+  font-size:72px;
+  color: @bg;
+  font-weight:bold;
+}
+.middle{
+  position:absolute;
+  left:50%;
+  width: @main-width;
+  margin-left:-@main-width/2
+}
+#screen{
+  .middle;
+  height:100%;
+  background-color:rgba(0,0,0,.1);
+  z-index:4;
+  pointer-events:none;
+}
+#main-container{
+  .middle;
+  z-index:1;
+  height:100%;
 }

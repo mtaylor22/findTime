@@ -54,4 +54,4 @@ docs/_build/
 target/
 
 
-findTime/static/CACHE/
+static/CACHE/
